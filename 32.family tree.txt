@@ -1,0 +1,22 @@
+female(alia).
+female(shreya).
+female(alison).
+
+male(tarak).
+male(charan).
+male(rajamouli).
+female(keeravani).
+
+parent(jenny,charan).
+parent(rajamouli,charan).
+parent(rajamouli,alia).
+parent(charan,alison).
+parent(charan,shreya).
+parent(sherya,tarak).
+parent(charan,keeravani).
+parent(keeravani,tarak).
+
+mother(X,Y):- parent(X,Y),female(X).
+father(X,Y):- parent(X,Y),male(X).
+sister(X,Y):- parent(Z,X),parent(Z,Y),female(X),X\==Y.
+brother(X,Y):- parent(Z,X),parent(Z,Y),male(X),X\==Y.
